@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-get
+  labels:
+    app: sw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sw
+  template:
+    metadata:
+      labels:
+        app: sw
+    spec:
+      containers:
+      - name: simple-watch
+        image: quay.io/polynomial/simple-get@sha256:dfb9e5bcc125e7db050890c8643f679130d5d33ab6d064feef98964c4f681aa2
